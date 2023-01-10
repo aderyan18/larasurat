@@ -38,9 +38,11 @@ Route::post('registeruser', [LoginController::class, 'registeruser'])->name(
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Data user routes
-Route::get('/datauser', [DataUserController::class, 'index'])->name('datauser');
+Route::get('/datauser', [DataUserController::class, 'index'])
+    ->name('datauser')
+    ->middleware('auth');
 
 // Surat Masuk Routes
-Route::get('/suratmasuk', [SuratMasukController::class, 'index'])->name(
-    'suratmasuk'
-);
+Route::get('/suratmasuk', [SuratMasukController::class, 'index'])
+    ->name('suratmasuk')
+    ->middleware('auth');
