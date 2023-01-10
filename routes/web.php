@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SuratMasukController;
+use App\Http\Controllers\DataUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +22,25 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('main');
-});
+})->middleware('auth');
 
+// auth login register Routes
 Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/confirmlogin', [LoginController::class, 'confirmlogin'])->name(
+    'confirmlogin'
+);
 
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('registeruser', [LoginController::class, 'registeruser'])->name(
+    'registeruser'
+);
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Data user routes
+Route::get('/datauser', [DataUserController::class, 'index'])->name('datauser');
+
+// Surat Masuk Routes
+Route::get('/suratmasuk', [SuratMasukController::class, 'index'])->name(
+    'suratmasuk'
+);

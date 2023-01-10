@@ -16,70 +16,52 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Dashboard</h1>
+            <h1>Data User</h1>
           </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                  <i class="far fa-user"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Admin</h4>
+            <div class="card card-body">
+                <div class="section-title mt-0">Light</div>
+                    <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Irwansyah Saputra</td>
+                              <td>2017-01-09</td>
+                              <td>
+                              <a href="#" class="btn btn-warning">Edit</a>
+                              <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                  <div class="card-body">
-                    10
+                  <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                      <ul class="pagination mb-0">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                      </ul>
+                    </nav>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                  <i class="far fa-newspaper"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Surat Masuk</h4>
-                  </div>
-                  <div class="card-body">
-                    42
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-warning">
-                  <i class="far fa-file"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Surat Keluar</h4>
-                  </div>
-                  <div class="card-body">
-                    1,201
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-success">
-                  <i class="fas fa-circle"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Buat Surat</h4>
-                  </div>
-                  <div class="card-body">
-                    47
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
       </div>
       <footer class="main-footer">

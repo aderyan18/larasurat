@@ -31,7 +31,8 @@
               <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST">
+                <form action="/registeruser" method="POST">
+                    @csrf
                     <div class="form-group">
                       <label for="name">Name</label>
                       <input id="name" type="text" class="form-control" name="name" autofocus>
@@ -67,6 +68,9 @@
                   </div>
                 </form>
               </div>
+            </div>
+            <div class="mt-5 text-muted text-center">
+              already have an account ? <a href="/login">Please Login</a>
             </div>
             <div class="simple-footer">
               Copyright &copy; Stisla 2018
