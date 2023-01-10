@@ -41,6 +41,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/datauser', [DataUserController::class, 'index'])
     ->name('datauser')
     ->middleware('auth');
+Route::get('/adduser', [DataUserController::class, 'adduser'])
+    ->name('adduser')
+    ->middleware('auth');
+Route::post('/insertdatauser', [DataUserController::class, 'insertdatauser']);
 
 // Surat Masuk Routes
 Route::get('/suratmasuk', [SuratMasukController::class, 'index'])

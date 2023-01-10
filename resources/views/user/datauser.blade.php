@@ -22,6 +22,19 @@
                 <div class="section-title mt-0">Light</div>
                     <div class="card-body">
                     <div class="table-responsive">
+                        <a href="/adduser" class="btn btn-success mb-2">Tambah +</a>
+                        @if (session('status'))
+                             <div class="alert alert-success alert-dismissible show fade">
+                            <div class="alert-body">
+                                <button class="close" data-dismiss="alert">
+                                    <span>&times;</span>
+                                </button>
+                                {{ session('status') }}
+                            </div>
+                        </div>
+
+                        @endif
+
                       <table class="table table-hover">
                         <thead>
                             <tr>
@@ -32,15 +45,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($data as $row )
                             <tr>
-                              <td>1</td>
-                              <td>Irwansyah Saputra</td>
-                              <td>2017-01-09</td>
-                              <td>
-                              <a href="#" class="btn btn-warning">Edit</a>
-                              <a href="#" class="btn btn-danger">Delete</a>
+                                <th scope="row">{{ $row->id }}</th>
+                                <td>{{ $row->name }}</td>
+                                <td>{{ $row->email }}</td>
+                                <td>
+                                <a href="#" class="btn btn-warning">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
                             </td>
                             </tr>
+                            @endforeach
                         </tbody>
                       </table>
                     </div>
