@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class SuratMasukController extends Controller
 {
-    public function index() {
-        return view('suratmasuk');
+    public function index()
+    {
+        return view('suratmasuk.suratmasuk');
     }
 }

@@ -45,6 +45,15 @@ Route::get('/adduser', [DataUserController::class, 'adduser'])
     ->name('adduser')
     ->middleware('auth');
 Route::post('/insertdatauser', [DataUserController::class, 'insertdatauser']);
+Route::get('showdatauser/{id}', [DataUserController::class, 'showdatauser']);
+Route::post('/updatedatauser/{id}', [
+    DataUserController::class,
+    'updatedatauser',
+]);
+Route::get('/deletedatauser/{id}', [
+    DataUserController::class,
+    'deletedatauser',
+]);
 
 // Surat Masuk Routes
 Route::get('/suratmasuk', [SuratMasukController::class, 'index'])

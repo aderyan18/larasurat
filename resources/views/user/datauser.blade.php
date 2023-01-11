@@ -45,14 +45,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $no = 1;
+                            @endphp
                             @foreach ($data as $row )
                             <tr>
-                                <th scope="row">{{ $row->id }}</th>
+                                <th scope="row">{{ $no ++}}</th>
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->email }}</td>
                                 <td>
-                                <a href="#" class="btn btn-warning">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <a  class="btn btn-warning" href="showdatauser/{{ $row->id }}">Edit</a>
+                                <a  class="btn btn-danger" href="/deletedatauser/{{ $row->id }}">Delete</a>
                             </td>
                             </tr>
                             @endforeach

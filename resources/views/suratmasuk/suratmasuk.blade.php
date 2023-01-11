@@ -26,9 +26,7 @@
                         <tr>
                           <th scope="col">No</th>
                           <th scope="col">Nomor Surat</th>
-                          <th scope="col">Tanggal masuk</th>
                           <th scope="col">Perihal</th>
-                          <th scope="col">Lampiran</th>
                           <th scope="col">Tanggal Kegiatan</th>
                           <th scope="col">Tempat Kegiatan</th>
                           <th scope="col">Pengirim</th>

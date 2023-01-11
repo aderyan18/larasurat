@@ -35,4 +35,34 @@ class DataUserController extends Controller
             'Data User Berhasil Ditambahkan'
         );
     }
+
+    public function showdatauser($id)
+    {
+        $data = User::find($id);
+        // dd($data);
+        return view('user.edituser', compact('data'));
+    }
+
+    public function updatedatauser($id)
+    {
+        $data = User::find($id);
+        $data->name = request('name');
+        $data->email = request('email');
+        $data->password = bcrypt(request('password'));
+        $data->save();
+        return redirect('/datauser')->with(
+            'status',
+            'Data User Berhasil Diubah'
+        );
+    }
+
+    public function deletedatauser($id)
+    {
+        $data = User::find($id);
+        $data->delete();
+        return redirect('/datauser')->with(
+            'status',
+            'Data User Berhasil Dihapus'
+        );
+    }
 }
