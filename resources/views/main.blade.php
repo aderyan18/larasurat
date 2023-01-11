@@ -29,7 +29,10 @@
                     <h4>Total Admin</h4>
                   </div>
                   <div class="card-body">
-                    10
+                    @php
+                    $admin = DB::table('users')->count();
+                    echo $admin;
+                    @endphp
                   </div>
                 </div>
               </div>
@@ -44,7 +47,10 @@
                     <h4>Surat Masuk</h4>
                   </div>
                   <div class="card-body">
-                    42
+                    @php
+                    $surat = DB::table('suratmasuk')->count();
+                    echo $surat;
+                    @endphp
                   </div>
                 </div>
               </div>
@@ -59,7 +65,7 @@
                     <h4>Surat Keluar</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                    1
                   </div>
                 </div>
               </div>
@@ -72,9 +78,6 @@
                 <div class="card-wrap">
                   <div class="card-header">
                     <h4>Buat Surat</h4>
-                  </div>
-                  <div class="card-body">
-                    47
                   </div>
                 </div>
               </div>
