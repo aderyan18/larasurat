@@ -73,7 +73,7 @@
               already have an account ? <a href="/login">Please Login</a>
             </div>
             <div class="simple-footer">
-              Copyright &copy; Stisla 2018
+              Copyright &copy; Stisla 2022
             </div>
           </div>
         </div>

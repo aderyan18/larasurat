@@ -16,27 +16,41 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Data User</h1>
+            <h1>Data Surat Masuk</h1>
           </div>
            <div class="card">
                   <div class="card-header">
-                    <h4>Edit Data User</h4>
+                    <h4>Tambah Data Surat Masuk</h4>
                   </div>
                   <div class="card-body">
-                    <form action="/updatedatauser/{{ $data ->id }}" method="POST" enctype="multipart/form-data">
+                    <form action="/insertsuratmasuk" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                          <label for="inputAddress">Name</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="masukkan nama anda..." name="name" value="{{ $data->name }}" required>
+                          <label for="inputAddress">Nomor Surat</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="masukkan nomor surat..." name="nomor_surat" required>
                         </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Perihal</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="masukkan perihal surat..." name="perihal" required>
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Tanggal Kegiatan</label>
+                            <input type="date" class="form-control" name="tanggal_kegiatan" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Tempat Kegiatan</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="masukkan tempat kegiatan..." name="tempat_kegiatan" required>
+                        </div>
+                      </div>
                       <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputEmail4">Email</label>
-                          <input type="email" class="form-control" id="inputEmail4" placeholder="masukkan email anda..." name="email" value="{{ $data->email }}" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputPassword4">Password</label>
-                          <input type="password" class="form-control" id="inputPassword4" placeholder="masukkan password anda..." name="password" required>
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress">Pengirim</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="masukkan pengirim surat..." name="pengirim" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress">File</label>
+                            <input type="file" class="form-control" name="file" required>
                         </div>
                       </div>
                     </div>

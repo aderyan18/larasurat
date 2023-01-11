@@ -21,6 +21,7 @@ class SuratMasukSeeder extends Seeder
             'tanggal_kegiatan' => '2021-01-01',
             'tempat_kegiatan' => 'aula kampus',
             'pengirim' => 'ukm xxx',
+            'file' => 'suratmasuk.pdf',
         ]);
     }
 }

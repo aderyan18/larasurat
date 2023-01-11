@@ -21,6 +21,9 @@
             <div class="card card-body">
                 <div class="section-title mt-0">Light</div>
                 <div class="table-responsive">
+                    <a href="/addsuratmasuk" class="btn btn-success mb-2">Tambah +</a>
+
+
                     <table class="table table-hover">
                       <thead>
                         <tr>
@@ -30,16 +33,29 @@
                           <th scope="col">Tanggal Kegiatan</th>
                           <th scope="col">Tempat Kegiatan</th>
                           <th scope="col">Pengirim</th>
+                          <th scope="col">File</th>
                           <th scope="col">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @php
+                            $no = 1;
+                        @endphp
+                        @foreach ($data as $row)
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th scope="row">{{ $no ++ }}</th>
+                          <td>{{ $row->nomor_surat }}</td>
+                          <td>{{ $row->perihal }}</td>
+                          <td>{{ $row->tanggal_kegiatan }}</td>
+                          <td>{{ $row->tempat_kegiatan }}</td>
+                          <td>{{ $row->pengirim }}</td>
+                          <td><a href="{{ $row->file }}" class="btn btn-secondary">details</a></td>
+                          <td class="flex-column">
+                                <a  class="btn btn-warning mt-2" href="#">Edit</a>
+                                <a  class="btn btn-danger mt-2" href="#">Delete</a>
+                            </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                 </div>
@@ -64,7 +80,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+          Copyright &copy; 2022 <div class="bullet"></div> Created By <a href="https://www.instagram.com/ryanalqadri_/">Ade ryan alqadri</a>
         </div>
         <div class="footer-right">
           2.3.0

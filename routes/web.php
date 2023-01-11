@@ -59,3 +59,13 @@ Route::get('/deletedatauser/{id}', [
 Route::get('/suratmasuk', [SuratMasukController::class, 'index'])
     ->name('suratmasuk')
     ->middleware('auth');
+Route::get('/addsuratmasuk', [SuratMasukController::class, 'addsuratmasuk'])
+    ->name('addsuratmasuk')
+    ->middleware('auth');
+Route::get('/addsuratmasuk', [SuratMasukController::class, 'addsuratmasuk'])
+    ->name('addsuratmasuk')
+    ->middleware('auth');
+Route::post('/insertsuratmasuk', [
+    SuratMasukController::class,
+    'insertsuratmasuk',
+]);
