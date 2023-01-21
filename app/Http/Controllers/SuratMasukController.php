@@ -14,6 +14,7 @@ class SuratMasukController extends Controller
     {
         $data = SuratMasuk::all();
         // dd($data);
+        // $data = SuratMasuk::with('data')->paginate(5);
         return view('suratmasuk.suratmasuk', compact('data'));
     }
     public function addsuratmasuk()
@@ -68,19 +69,42 @@ class SuratMasukController extends Controller
         // dd($data);
         return view('suratmasuk.editsuratmasuk', compact('data'));
     }
-    public function updatesuratmasuk($id)
+    public function updatesuratmasuk(Request $request, $id)
+    {
+        $request->validate([
+            'nomor_surat' => 'required',
+            'perihal' => 'required',
+            'tanggal_kegiatan' => 'required',
+            'tempat_kegiatan' => 'required',
+            'pengirim' => 'required',
+            'file' => 'mimes:doc,docx,pdf,xls,xlsx,pdf,ppt,pptx',
+        ]);
+        $data = SuratMasuk::find($id);
+        if ($request->hasFile('file')) {
+            $request
+                ->file('file')
+                ->move('file/', $request->file->getClientOriginalName());
+            $data->nomor_surat = $request->nomor_surat;
+            $data->perihal = $request->perihal;
+            $data->tanggal_kegiatan = $request->tanggal_kegiatan;
+            $data->tempat_kegiatan = $request->tempat_kegiatan;
+            $data->pengirim = $request->pengirim;
+            $data->file = $request->file->getClientOriginalName();
+            $data->save();
+            return redirect('/suratmasuk')->with(
+                'status',
+                'Data Surat Masuk Berhasil Diubah'
+            );
+        }
+        $data->update($request->all());
+    }
+    public function deletesuratmasuk($id)
     {
         $data = SuratMasuk::find($id);
-        $data->nomor_surat = request('nomor_surat');
-        $data->perihal = request('perihal');
-        $data->tanggal_kegiatan = request('tanggal_kegiatan');
-        $data->tempat_kegiatan = request('tempat_kegiatan');
-        $data->pengirim = request('pengirim');
-        $data->file = request('file');
-        $data->save();
+        $data->delete();
         return redirect('/suratmasuk')->with(
             'status',
-            'Data Surat Masuk Berhasil Diubah'
+            'Data Surat Masuk Berhasil Dihapus'
         );
     }
 }

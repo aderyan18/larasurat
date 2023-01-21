@@ -62,12 +62,13 @@
                           <td><a href="{{ $row->file }}" class="btn btn-secondary">details</a></td>
                           <td class="flex-column">
                                 <a  class="btn btn-warning mt-2" href="showsuratmasuk/{{ $row->id }}">Edit</a>
-                                <a  class="btn btn-danger mt-2" href="#">Delete</a>
+                                <a  class="btn btn-danger mt-2" href="/deletesuratmasuk/{{ $row->id }}">Delete</a>
                             </td>
                         </tr>
                         @endforeach
                       </tbody>
                     </table>
+
                 </div>
                     <div class="card-footer text-right">
                     <nav class="d-inline-block">
