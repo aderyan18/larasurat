@@ -22,7 +22,17 @@
                 <div class="section-title mt-0">Light</div>
                 <div class="table-responsive">
                     <a href="/addsuratmasuk" class="btn btn-success mb-2">Tambah +</a>
+                    @if (session('status'))
+                             <div class="alert alert-success alert-dismissible show fade">
+                            <div class="alert-body">
+                                <button class="close" data-dismiss="alert">
+                                    <span>&times;</span>
+                                </button>
+                                {{ session('status') }}
+                            </div>
+                        </div>
 
+                        @endif
 
                     <table class="table table-hover">
                       <thead>
@@ -51,7 +61,7 @@
                           <td>{{ $row->pengirim }}</td>
                           <td><a href="{{ $row->file }}" class="btn btn-secondary">details</a></td>
                           <td class="flex-column">
-                                <a  class="btn btn-warning mt-2" href="#">Edit</a>
+                                <a  class="btn btn-warning mt-2" href="showsuratmasuk/{{ $row->id }}">Edit</a>
                                 <a  class="btn btn-danger mt-2" href="#">Delete</a>
                             </td>
                         </tr>

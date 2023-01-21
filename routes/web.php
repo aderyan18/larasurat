@@ -69,3 +69,8 @@ Route::post('/insertsuratmasuk', [
     SuratMasukController::class,
     'insertsuratmasuk',
 ]);
+Route::get('showsuratmasuk/{id}', [SuratMasukController::class, 'showsuratmasuk']);
+Route::post('/updatesuratmasuk/{id}', [
+    SuratMasukController::class,
+    'updatesuratmasuk',
+]);

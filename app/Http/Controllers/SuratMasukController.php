@@ -62,4 +62,25 @@ class SuratMasukController extends Controller
             'Data Surat Masuk Berhasil Ditambahkan'
         );
     }
+    public function showsuratmasuk($id)
+    {
+        $data = SuratMasuk::find($id);
+        // dd($data);
+        return view('suratmasuk.editsuratmasuk', compact('data'));
+    }
+    public function updatesuratmasuk($id)
+    {
+        $data = SuratMasuk::find($id);
+        $data->nomor_surat = request('nomor_surat');
+        $data->perihal = request('perihal');
+        $data->tanggal_kegiatan = request('tanggal_kegiatan');
+        $data->tempat_kegiatan = request('tempat_kegiatan');
+        $data->pengirim = request('pengirim');
+        $data->file = request('file');
+        $data->save();
+        return redirect('/suratmasuk')->with(
+            'status',
+            'Data Surat Masuk Berhasil Diubah'
+        );
+    }
 }
