@@ -44,20 +44,6 @@ class SuratMasukController extends Controller
             $data->file = $request->file->getClientOriginalName();
             $data->save();
         }
-        // $file = $request->file('file');
-        // $nama_file =
-        //     'FT' .
-        //     date('Ymdhis') .
-        //     '_' .
-        //     $request->file('file')->getClientOriginalName();
-        // $data = new SuratMasuk();
-        // $data->nomor_surat = $request->nomor_surat;
-        // $data->perihal = $request->perihal;
-        // $data->tanggal_kegiatan = $request->tanggal_kegiatan;
-        // $data->tempat_kegiatan = $request->tempat_kegiatan;
-        // $data->pengirim = $request->pengirim;
-        // $data->file = $nama_file;
-        // $data->save();
         return redirect('/suratmasuk')->with(
             'status',
             'Data Surat Masuk Berhasil Ditambahkan'

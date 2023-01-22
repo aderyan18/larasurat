@@ -87,3 +87,10 @@ Route::get('/deletesuratmasuk/{id}', [
 Route::get('/suratkeluar', [SuratKeluarController::class, 'index'])
     ->name('suratkeluar')
     ->middleware('auth');
+Route::get('/addsuratkeluar', [SuratKeluarController::class, 'addsuratkeluar'])
+    ->name('addsuratkeluar')
+    ->middleware('auth');
+Route::post('/insertsuratkeluar', [
+    SuratKeluarController::class,
+    'insertsuratkeluar',
+]);

@@ -23,27 +23,29 @@
                     <h4>Tambah Data Surat Masuk</h4>
                   </div>
                   <div class="card-body">
-                    <form action="/insertsuratmasuk" method="POST" enctype="multipart/form-data">
+                    <form action="/insertsuratkeluar" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
-                          <label for="inputAddress">Nomor Surat</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="masukkan nomor surat..." name="nomor_surat" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="inputAddress">Perihal</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="masukkan perihal surat..." name="perihal" required>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputAddress">Nomor Surat</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="masukkan nomor surat..." name="nomorsurat" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Tanggal Surat</label>
+                                <input type="date" class="form-control" id="inputAddress" placeholder="masukkan tanggal surat..." name="tanggalsurat" required>
+                            </div>
                         </div>
                         <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Tanggal Surat</label>
-                            <input type="date" class="form-control" name="tanggal_kegiatan" required>
-                        </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputAddress">Perihal</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="masukkan perihal surat..." name="perihal" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputAddress">Tujuan</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="masukkan tujuan surat..." name="tujuan" required>
+                            </div>
                       </div>
                       <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputAddress">Tujuan</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="masukkan pengirim surat..." name="pengirim" required>
-                          </div>
                           <div class="form-group col-md-6">
                             <label for="inputAddress">File</label>
                             <input type="file" class="form-control" name="file" required>
