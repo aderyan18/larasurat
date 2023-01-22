@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\DataUserController;
+use App\Http\Controllers\SuratKeluarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +82,8 @@ Route::get('/deletesuratmasuk/{id}', [
     SuratMasukController::class,
     'deletesuratmasuk',
 ]);
+
+// Surat Keluar Routes
+Route::get('/suratkeluar', [SuratKeluarController::class, 'index'])
+    ->name('suratkeluar')
+    ->middleware('auth');

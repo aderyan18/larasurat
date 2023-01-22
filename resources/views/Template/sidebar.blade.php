@@ -16,7 +16,7 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Surat</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="/suratmasuk">Surat Masuk</a></li>
-                  <li><a class="nav-link" href="#">Surat Keluar</a></li>
+                  <li><a class="nav-link" href="/suratkeluar">Surat Keluar</a></li>
                   <li><a class="nav-link" href="#">Create Latter</a></li>
                 </ul>
               </li>
