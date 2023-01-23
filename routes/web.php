@@ -94,3 +94,15 @@ Route::post('/insertsuratkeluar', [
     SuratKeluarController::class,
     'insertsuratkeluar',
 ]);
+Route::get('showsuratkeluar/{id}', [
+    SuratKeluarController::class,
+    'showsuratkeluar',
+]);
+Route::post('/updatesuratkeluar/{id}', [
+    SuratKeluarController::class,
+    'updatesuratkeluar',
+]);
+Route::get('/deletesuratkeluar/{id}', [
+    SuratKeluarController::class,
+    'deletesuratkeluar',
+]);
