@@ -57,7 +57,7 @@
                           <td>{{ $row->tanggalsurat }}</td>
                           <td>{{ $row->perihal }}</td>
                           <td>{{ $row->tujuan }}</td>
-                          <td><a href="{{ $row->file }}" class="btn btn-secondary">details</a></td>
+                          <td><a href="/file/{{ $row->file }}" class="btn btn-secondary">details</a></td>
                           <td class="flex-column">
                                 <a  class="btn btn-warning mt-2" href="showsuratkeluar/{{ $row->id }}">Edit</a>
                                 <a  class="btn btn-danger mt-2" href="/deletesuratkeluar/{{ $row->id }}">Delete</a>

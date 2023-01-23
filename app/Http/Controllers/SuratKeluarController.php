@@ -7,6 +7,7 @@ use illuminate\Support\Str;
 use App\Models\SuratKeluar;
 use Redirect;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class SuratKeluarController extends Controller
 {
