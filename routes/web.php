@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\DataUserController;
 use App\Http\Controllers\SuratKeluarController;
+use App\Http\Controllers\CreateLetterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +107,8 @@ Route::get('/deletesuratkeluar/{id}', [
     SuratKeluarController::class,
     'deletesuratkeluar',
 ]);
+
+//routu create letter
+Route::get('/createletter', [CreateLetterController::class, 'createletter'])
+    ->name('createletter')
+    ->middleware('auth');

@@ -17,7 +17,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="/suratmasuk">Surat Masuk</a></li>
                   <li><a class="nav-link" href="/suratkeluar">Surat Keluar</a></li>
-                  <li><a class="nav-link" href="#">Create Latter</a></li>
+                  <li><a class="nav-link" href="/createletter">Create Letter</a></li>
                 </ul>
               </li>
             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
