@@ -6,6 +6,7 @@ use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\DataUserController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\CreateLetterController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,3 +113,8 @@ Route::get('/deletesuratkeluar/{id}', [
 Route::get('/createletter', [CreateLetterController::class, 'createletter'])
     ->name('createletter')
     ->middleware('auth');
+
+// pdf reader
+// Route::get('/createletter', [PDFController::class, 'generatePDF'])->middleware(
+//     'auth'
+// );
