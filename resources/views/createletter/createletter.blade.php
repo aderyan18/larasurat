@@ -11,14 +11,14 @@
     tempor incididunt ut labore et dolore magna aliqua.</p> --}}
     <div class="table-responsive">
                 <table border="1" align="center">
-                     <td><img src="{{ asset('logo/logo_footer.png') }}" width="110" height="110" alt=""></td>
+                     <td><img src="{{ public_path('logo/logo_footer.png') }}" width="110" height="110" alt="BTS"></td>
                      <td><center><font size="3">{{ $title1 }}</font><br>
                         <font size="3" color="blue">{{ $title2 }}</font><br>
                         <font size="3" color="red">{{ $title3 }}</font><br>
                         <font size="3">{{ $title4 }}</font><br>
                         <font size="2">{{ $title5 }}</font><br>
                  </td>
-            </table>
+                </table>
     </div>
 
     <table class="table table-bordered">
@@ -27,13 +27,13 @@
             <th>Tanggal Surat</th>
             <th>Perihal</th>
         </tr>
-        {{-- @foreach($suratkeluar as $suratkeluar)
+        @foreach($suratkeluars as $suratkeluar)
             <tr>
                 <td>{{ $suratkeluar->nomorsurat }}</td>
                 <td>{{ $suratkeluar->tanggalsurat }}</td>
                 <td>{{ $suratkeluar->perihal }}</td>
             </tr>
-        @endforeach --}}
+        @endforeach
     </table>
 </body>
 </html>

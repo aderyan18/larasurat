@@ -115,6 +115,7 @@ Route::get('/createletter', [CreateLetterController::class, 'createletter'])
     ->middleware('auth');
 
 // pdf reader
-// Route::get('/createletter', [PDFController::class, 'generatePDF'])->middleware(
-//     'auth'
-// );
+Route::get('/createletter', [
+    CreateLetterController::class,
+    'generatePDF',
+])->middleware('auth');

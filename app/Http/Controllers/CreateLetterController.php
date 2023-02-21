@@ -15,12 +15,13 @@ class CreateLetterController extends Controller
     }
     public function generatePDF()
     {
-        $suratkeluar = SuratKeluar::get();
+        $suratkeluars = SuratKeluar::get();
 
         $data = [
             // 'title' => 'Welcome to LaravelTuts.com',
             // 'date' => date('m/d/Y'),
             // 'users' => $users,
+            'suratkeluars' => $suratkeluars,
             'title1' => 'BADAN PENGURUS HARIAN (BPH)',
             'title2' => 'DIPANEGARA COMPUTER CLUB (DCC)',
             'title3' => 'UNIVERSITAS DIPA MAKASSAR',
@@ -31,6 +32,6 @@ class CreateLetterController extends Controller
 
         $pdf = PDF::loadView('createletter.createletter', $data);
 
-        return $pdf->download('laraveltuts.pdf');
+        return $pdf->download('suratkeluar.pdf');
     }
 }
