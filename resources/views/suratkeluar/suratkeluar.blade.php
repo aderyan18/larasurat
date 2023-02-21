@@ -39,10 +39,14 @@
                         <tr>
                           <th scope="col">No</th>
                           <th scope="col">Nomor Surat</th>
-                          <th scope="col">Tanggal Surat</th>
+                          <th scope="col">Lampiran</th>
                           <th scope="col">Perihal</th>
-                          <th scope="col">Tujuan</th>
-                          <th scope="col">File</th>
+                          <th scope="col">Kepada</th>
+                          <th scope="col">Di</th>
+                          <th scope="col">Isi Surat</th>
+                          <th scope="col">Tanggal Surat</th>
+                          <th scope="col">Tanda tangan 1</th>
+                          <th scope="col">Tanda tangan 2</th>
                           <th scope="col">Aksi</th>
                         </tr>
                       </thead>
@@ -54,10 +58,16 @@
                         <tr>
                           <th scope="row">{{ $no ++ }}</th>
                           <td>{{ $row->nomorsurat }}</td>
-                          <td>{{ $row->tanggalsurat }}</td>
+                          <td>{{ $row->lampiran }}</td>
                           <td>{{ $row->perihal }}</td>
-                          <td>{{ $row->tujuan }}</td>
-                          <td><a href="/file/{{ $row->file }}" class="btn btn-secondary">details</a></td>
+                          <td>{{ $row->kepada }}</td>
+                          <td>{{ $row->di }}</td>
+                          <td>{{ $row->isi_surat }}</td>
+                          <td>{{ $row->tanggalsurat }}</td>
+                          <td>{{ $row->ttd_1 }}</td>
+                          <td>{{ $row->ttd_2 }}</td>
+                          {{-- <td><a href="/file/{{ $row->file }}" class="btn btn-secondary">details</a></td> --}}
+                          <td><a href="/detailskeluar/{{ $row->id }}" class="btn btn-secondary">details</a></td>
                           <td class="flex-column">
                                 <a  class="btn btn-warning mt-2" href="showsuratkeluar/{{ $row->id }}">Edit</a>
                                 <a  class="btn btn-danger mt-2" href="/deletesuratkeluar/{{ $row->id }}">Delete</a>

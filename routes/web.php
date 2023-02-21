@@ -7,6 +7,7 @@ use App\Http\Controllers\DataUserController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\CreateLetterController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\DetailsKeluarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,7 +110,12 @@ Route::get('/deletesuratkeluar/{id}', [
     'deletesuratkeluar',
 ]);
 
-//routu create letter
+// Details Keluar Routes
+Route::get('/detailskeluar/{id}', [DetailsKeluarController::class, 'index'])
+    ->name('detailskeluar')
+    ->middleware('auth');
+
+//route create letter
 Route::get('/createletter', [CreateLetterController::class, 'createletter'])
     ->name('createletter')
     ->middleware('auth');

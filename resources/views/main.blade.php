@@ -65,7 +65,10 @@
                     <h4>Surat Keluar</h4>
                   </div>
                   <div class="card-body">
-                    1
+                    @php
+                    $surat = DB::table('suratkeluar')->count();
+                    echo $surat;
+                    @endphp
                   </div>
                 </div>
               </div>
