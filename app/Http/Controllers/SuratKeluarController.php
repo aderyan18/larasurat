@@ -23,29 +23,34 @@ class SuratKeluarController extends Controller
     }
     public function insertsuratkeluar(Request $request)
     {
-        $this->validate($request, [
-            'nomorsurat' => 'required',
-            'tanggalsurat' => 'required',
-            'perihal' => 'required',
-            'tujuan' => 'required',
-            'file' => 'mimes:doc,docx,pdf,xls,xlsx,pdf,ppt,pptx',
-        ]);
-        if ($request->hasFile('file')) {
-            $request
-                ->file('file')
-                ->move('file/', $request->file->getClientOriginalName());
-            $data = new SuratKeluar();
-            $data->nomorsurat = $request->nomorsurat;
-            $data->tanggalsurat = $request->tanggalsurat;
-            $data->perihal = $request->perihal;
-            $data->tujuan = $request->tujuan;
-            $data->file = $request->file->getClientOriginalName();
-            $data->save();
-        }
-        return redirect('/suratkeluar')->with(
-            'status',
-            'Data Surat Keluar Berhasil Ditambahkan'
-        );
+        // dd($request->all());
+        // $this->validate($request, [
+        //     'nomorsurat' => 'required',
+        //     'lampiran' => 'required',
+        //     'perihal' => 'required',
+        //     'kepada' => 'required',
+        //     'di' => 'required',
+        //     'isi_surat' => 'required',
+        //     'tanggalsurat' => 'required',
+        //     'ttd_1' => 'required',
+        //     'ttd_2' => 'required',
+        // ]);
+
+        // $data = new SuratKeluar();
+        // $data->nomorsurat = $request->nomorsurat;
+        // $data->lampiran = $request->lampiran;
+        // $data->perihal = $request->perihal;
+        // $data->kepada = $request->kepada;
+        // $data->di = $request->di;
+        // $data->isi_surat = $request->isi_surat;
+        // $data->tanggalsurat = $request->tanggalsurat;
+        // $data->ttd_1 = $request->ttd_1;
+        // $data->ttd_2 = $request->ttd_2;
+        // $data->save();
+        // return redirect('/suratkeluar')->with(
+        //     'status',
+        //     'Data Surat Keluar Berhasil Ditambahkan'
+        // );
     }
     public function showsuratkeluar($id)
     {

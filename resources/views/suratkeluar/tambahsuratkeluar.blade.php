@@ -31,26 +31,49 @@
                               <input type="text" class="form-control" id="inputAddress" placeholder="masukkan nomor surat..." name="nomorsurat" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputAddress">Tanggal Surat</label>
-                                <input type="date" class="form-control" id="inputAddress" placeholder="masukkan tanggal surat..." name="tanggalsurat" required>
+                              <label for="inputAddress">Lampiran</label>
+                              <input type="number" class="form-control" id="inputAddress" placeholder="masukkan lampiran..." name="lampiran" required>
                             </div>
+                          </div>
+                          <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress">perihal</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="masukkan perihal.." name="perihal" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress">kepada</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="masukkan kepada.." name="kepada" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress">di</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="masukkan di.." name="di" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="inputAddress">Tanggal Surat</label>
+                          <input type="date" class="form-control" id="inputAddress" placeholder="masukkan tanggal surat..." name="tanggalsurat" required>
+                            </div>
+                          </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Isi</label>
+                          <textarea class="form-control" id="editor" name="isi_surat" ></textarea>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="inputAddress">Perihal</label>
-                              <input type="text" class="form-control" id="inputAddress" placeholder="masukkan perihal surat..." name="perihal" required>
+                                <label for="inputAddress">tanda tangan 1</label>
+                                <select name="ttd_1" id="ttd_1" class="form-control">
+                                    <option value="BasoSamriadi">Baso Samriadi</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="inputAddress">Tujuan</label>
-                              <input type="text" class="form-control" id="inputAddress" placeholder="masukkan tujuan surat..." name="tujuan" required>
+                                <label for="inputAddress">tanda tangan 2</label>
+                                <select name="ttd_1" id="ttd_1" class="form-control" >
+                                    <option value="AdeRyanAlqadri">Ade Ryan Alqadri</option>
+                                    <option value="SusiSusanti">Susi Susanti</option>
+                                </select>
                             </div>
-                      </div>
-                      <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputAddress">File</label>
-                            <input type="file" class="form-control" name="file" required>
                         </div>
-                      </div>
                     </div>
                     <div class="card-footer">
                         <button class="btn btn-primary" type="submit">Submit</button>
@@ -76,6 +99,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src={{ asset("stisla-master/assets/js/stisla.js") }}></script>
 
+  @section('ckeditor')
+  <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+  <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+  </script>
+  @endsection
+
+  @yield('ckeditor')
+
+
   <!-- JS Libraies -->
   <script src={{ asset("stisla-master/node_modules/simpleweather/jquery.simpleWeather.min.js") }}></script>
   <script src={{ asset("stisla-master/node_modules/chart.js/dist/Chart.min.js") }}></script>
@@ -90,5 +127,6 @@
 
   <!-- Page Specific JS File -->
   <script src={{ asset("stisla-master/assets/js/page/index-0.js") }}></script>
+
 </body>
 </html>
