@@ -11,9 +11,13 @@ class SuratKeluar extends Model
     protected $table = 'suratkeluar';
     protected $fillable = [
         'nomorsurat',
-        'tanggalsurat',
+        'lampiran',
         'perihal',
-        'tujuan',
-        'file',
+        'kepada',
+        'di',
+        'isi_surat',
+        'tanggalsurat',
+        'ttd_1',
+        'ttd_2',
     ];
 }

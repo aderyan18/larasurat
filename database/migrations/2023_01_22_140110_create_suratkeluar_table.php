@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('perihal');
             $table->string('kepada');
             $table->string('di');
-            $table->string('isi_surat');
+            $table->longText('isi_surat', 255);
             $table->date('tanggalsurat');
             $table->string('ttd_1');
             $table->string('ttd_2');

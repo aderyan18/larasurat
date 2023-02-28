@@ -23,34 +23,21 @@ class SuratKeluarController extends Controller
     }
     public function insertsuratkeluar(Request $request)
     {
-        // dd($request->all());
-        // $this->validate($request, [
-        //     'nomorsurat' => 'required',
-        //     'lampiran' => 'required',
-        //     'perihal' => 'required',
-        //     'kepada' => 'required',
-        //     'di' => 'required',
-        //     'isi_surat' => 'required',
-        //     'tanggalsurat' => 'required',
-        //     'ttd_1' => 'required',
-        //     'ttd_2' => 'required',
-        // ]);
-
-        // $data = new SuratKeluar();
-        // $data->nomorsurat = $request->nomorsurat;
-        // $data->lampiran = $request->lampiran;
-        // $data->perihal = $request->perihal;
-        // $data->kepada = $request->kepada;
-        // $data->di = $request->di;
-        // $data->isi_surat = $request->isi_surat;
-        // $data->tanggalsurat = $request->tanggalsurat;
-        // $data->ttd_1 = $request->ttd_1;
-        // $data->ttd_2 = $request->ttd_2;
-        // $data->save();
-        // return redirect('/suratkeluar')->with(
-        //     'status',
-        //     'Data Surat Keluar Berhasil Ditambahkan'
-        // );
+        SuratKeluar::create([
+            'nomorsurat' => $request->nomorsurat,
+            'lampiran' => $request->lampiran,
+            'perihal' => $request->perihal,
+            'kepada' => $request->kepada,
+            'di' => $request->di,
+            'isi_surat' => $request->isi_surat,
+            'tanggalsurat' => $request->tanggalsurat,
+            'ttd_1' => $request->ttd_1,
+            'ttd_2' => $request->ttd_2,
+        ]);
+        return redirect('/suratkeluar')->with(
+            'status',
+            'Data Berhasil Ditambahkan'
+        );
     }
     public function showsuratkeluar($id)
     {

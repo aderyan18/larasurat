@@ -57,7 +57,7 @@
                           </div>
                         <div class="form-group">
                           <label for="inputAddress">Isi</label>
-                          <textarea class="form-control" id="editor" name="isi_surat" ></textarea>
+                          <textarea class="form-control" id="editor" name="isi_surat"></textarea>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -68,7 +68,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputAddress">tanda tangan 2</label>
-                                <select name="ttd_1" id="ttd_1" class="form-control" >
+                                <select name="ttd_2" id="ttd_1" class="form-control" >
                                     <option value="AdeRyanAlqadri">Ade Ryan Alqadri</option>
                                     <option value="SusiSusanti">Susi Susanti</option>
                                 </select>

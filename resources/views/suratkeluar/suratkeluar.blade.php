@@ -47,6 +47,7 @@
                           <th scope="col">Tanggal Surat</th>
                           <th scope="col">Tanda tangan 1</th>
                           <th scope="col">Tanda tangan 2</th>
+                          <th scope="col">Details</th>
                           <th scope="col">Aksi</th>
                         </tr>
                       </thead>
