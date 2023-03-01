@@ -114,6 +114,9 @@ Route::get('/deletesuratkeluar/{id}', [
 Route::get('/detailskeluar/{id}', [DetailsKeluarController::class, 'index'])
     ->name('detailskeluar')
     ->middleware('auth');
+Route::get('/generatePDF/{id}', [DetailsKeluarController::class, 'generatePDF'])
+    ->name('generatePDF')
+    ->middleware('auth');
 
 //route create letter
 Route::get('/createletter', [CreateLetterController::class, 'createletter'])
@@ -121,7 +124,7 @@ Route::get('/createletter', [CreateLetterController::class, 'createletter'])
     ->middleware('auth');
 
 // pdf reader
-Route::get('/createletter', [
-    CreateLetterController::class,
-    'generatePDF',
-])->middleware('auth');
+// Route::get('/createletter', [
+//     CreateLetterController::class,
+//     'generatePDF',
+// ])->middleware('auth');
