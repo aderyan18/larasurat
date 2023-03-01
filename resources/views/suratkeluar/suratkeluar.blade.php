@@ -63,7 +63,7 @@
                           <td>{{ $row->perihal }}</td>
                           <td>{{ $row->kepada }}</td>
                           <td>{{ $row->di }}</td>
-                          <td>{{ $row->isi_surat }}</td>
+                          <td>{{!! $row->isi_surat !!}}</td>
                           <td>{{ $row->tanggalsurat }}</td>
                           <td>{{ $row->ttd_1 }}</td>
                           <td>{{ $row->ttd_2 }}</td>

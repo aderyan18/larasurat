@@ -48,23 +48,26 @@ class SuratKeluarController extends Controller
     {
         $this->validate($request, [
             'nomorsurat' => 'required',
-            'tanggalsurat' => 'required',
+            'lampiran' => 'required',
             'perihal' => 'required',
-            'tujuan' => 'required',
-            'file' => 'mimes:doc,docx,pdf,xls,xlsx,pdf,ppt,pptx',
+            'kepada' => 'required',
+            'di' => 'required',
+            'isi_surat' => 'required',
+            'tanggalsurat' => 'required',
+            'ttd_1' => 'required',
+            'ttd_2' => 'required',
         ]);
-        if ($request->hasFile('file')) {
-            $request
-                ->file('file')
-                ->move('file/', $request->file->getClientOriginalName());
-            $data = SuratKeluar::find($id);
-            $data->nomorsurat = $request->nomorsurat;
-            $data->tanggalsurat = $request->tanggalsurat;
-            $data->perihal = $request->perihal;
-            $data->tujuan = $request->tujuan;
-            $data->file = $request->file->getClientOriginalName();
-            $data->save();
-        }
+        $data = SuratKeluar::find($id);
+        $data->nomorsurat = $request->nomorsurat;
+        $data->lampiran = $request->lampiran;
+        $data->perihal = $request->perihal;
+        $data->kepada = $request->kepada;
+        $data->di = $request->di;
+        $data->isi_surat = $request->isi_surat;
+        $data->tanggalsurat = $request->tanggalsurat;
+        $data->ttd_1 = $request->ttd_1;
+        $data->ttd_2 = $request->ttd_2;
+        $data->save();
         return redirect('/suratkeluar')->with(
             'status',
             'Data Surat Keluar Berhasil Diubah'
